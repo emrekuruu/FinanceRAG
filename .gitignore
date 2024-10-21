@@ -11,6 +11,7 @@ htmlcov/
 dist/
 data/FinDER/
 *chroma
+demos/FinDer/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

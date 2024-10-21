@@ -4,7 +4,7 @@ import logging
 import os
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple
 
-import pytrec_eval
+import pytrec_eval # type: ignore
 
 from financerag.common import Generator, HFDataLoader, Reranker, Retrieval
 from financerag.tasks.TaskMetadata import TaskMetadata
