@@ -12,7 +12,7 @@ license = "Apache 2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">= 3.10.0, < 3.12"
+python = ">= 3.10.0, < 4.0.0"
 pandas = "^2.2.3"
 matplotlib = "^3.9.2"
 transformers = "^4.45.2"
@@ -30,6 +30,8 @@ numpy = "1.26.4"
 torch = "~2.2.2"
 sentence-transformers = "~3.1.1"
 openai = "~1.47.1"
+langchain-experimental = "^0.3.2"
+whoosh = "^2.7.4"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.7.0"
