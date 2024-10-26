@@ -1,81 +1,53 @@
-from transformers import pipeline
-from typing import Any, List
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain.chains import LLMChain
+from typing import Any, Dict
+import json
+import pandas as pd 
 
-class TableSplitter:
-    def __init__(self, model_name: str = "google/flan-t5-base", **kwargs: Any) -> None:
-        # Use a Hugging Face model for text generation (table extraction in this case)
-        self.model = pipeline("text2text-generation", model=model_name)
-
-        # Prompt template focused only on identifying tables with an example
-        self.prompt_template = (
-            "You are an expert in identifying tables in text and formatting them for LLM processing. "
-            "Extract the tables from the following text and reformat them into a clean, structured format "
-            "that retains all key details like symbols, numbers, and labels.\n\n"
-            "Example:\n"
-            "Text: \"The following table presents our total net revenues by segment. "
-            "% Change (in millions) 2023 2022 Product Commerce $23,594 $19,955 18% 19%\"\n"
-            "Reformatted Table:\n"
-            "Segment: Product Commerce\n"
-            "2023 Revenue: $23,594\n"
-            "2022 Revenue: $19,955\n"
-            "Change: 18%\n"
-            "Change Constant Currency: 19%\n\n"
-            "Now process the following text:\n\n{text}"
-        )
-
-    def split_text(self, text: str) -> List[str]:
-        # Create the prompt asking for table extraction and formatting
-        prompt = self.prompt_template.format(text=text)
+class TableExtractor:
+    def __init__(self, api_key: str, model_name: str = "gpt-3.5-turbo") -> None:
+        # Initialize OpenAI chat model in LangChain
+        self.llm = ChatOpenAI(model_name=model_name, openai_api_key=api_key)
         
-        # Use the Hugging Face model to generate a response
-        response = self.model(prompt, max_length=512, do_sample=False)[0]["generated_text"]
-        
-        # Return the extracted and reformatted table with all key information
-        return response
+        # Define a specific prompt with a clear example for expected output
+        self.prompt_template = ChatPromptTemplate.from_template(
+            """You will take the following text as input and extract a single table from it, preserving only rows and columns as shown in the table. There will be paragraph text before the table; ignore it and extract the table only.
 
-class SummarizeSplitter:
-    def __init__(self,max_length,  model_name: str = "facebook/bart-large-cnn", **kwargs: Any) -> None:
-        # Use a Hugging Face model for summarization
-        self.model = pipeline("summarization", model=model_name)
-        self.max_length = max_length
+            Text:
+            {text}
 
-        # You can adjust this prompt or approach based on your needs, but typically summarization doesn't need an explicit prompt.
-        self.prompt_template = (
-            "You are an expert at summarizing text into concise, clear representations. "
-            "Summarize the following text:\n\n{text}"
+            You should extract the table and return it in the following JSON format:
+            **EXAMPLE OUTPUT**
+            {{
+                "table": [
+                    [
+                        "column1",
+                        "column2",
+                        "column3",
+                        "column4"
+                    ],
+                    [
+                        "row1",
+                        "value1",
+                        "value2",
+                        "value3"
+                    ],
+                    [
+                        "row2",
+                        "value4",
+                        "value5",
+                        "value6"
+                    ]
+                ]
+            }}
+            """
         )
-
-    def split_text(self, text: str) -> str:
-        # Summarize the given text
-        prompt = self.prompt_template.format(text=text)
-
-        # Use the summarization model to generate a summary
-        summary = self.model(prompt, max_length = self.max_length, min_length=30, do_sample=False)[0]['summary_text']
         
-        # Return the summary
-        return summary
-
-
-class KeyConceptSplitter:
-    def __init__(self, max_length, model_name: str = "google/flan-t5-base", **kwargs: Any) -> None:
-        # Use a Hugging Face model for summarization and concept extraction
-        self.model = pipeline("text2text-generation", model=model_name)
-        self.max_length = max_length
-
-        # Prompt template for identifying key concepts in the text
-        self.prompt_template = (
-            "You are an expert in financial documents and key concept extraction. "
-            "Extract the most important sections and key concepts from the following 10-K report. "
-            "Make sure to include sections like Risk Factors, Management’s Discussion, Financial Overview, and other relevant points.\n\n"
-            "Text:\n\n{text}"
-        )
-
-    def split_text(self, text: str) -> List[str]:
-        # Create the prompt asking for key concept extraction
-        prompt = self.prompt_template.format(text=text)
-
-        # Use the Hugging Face model to generate the key concept extraction
-        key_concepts = self.model(prompt, max_length = self.max_length, do_sample=False)[0]["generated_text"]
-
-        # Return the extracted key concepts
-        return key_concepts
+        # Set up the LangChain LLMChain for querying OpenAI
+        self.chain = LLMChain(llm=self.llm, prompt=self.prompt_template)
+        
+    def extract_table(self, text: str) -> pd.DataFrame:
+        response = self.chain.run({"text": text})
+        table_data = json.loads(response)                
+        return table_data

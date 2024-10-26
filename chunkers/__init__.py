@@ -1,3 +1,3 @@
-from .chunker import TableSplitter, SummarizeSplitter, KeyConceptSplitter
+from .chunker import TableExtractor
 
-__all__ = ['TableSplitter', 'SummarizeSplitter', 'KeyConceptSplitter']
+__all__ = ["TableExtractor"]
