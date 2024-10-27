@@ -1,30 +1,14 @@
-strategy our mission is to achieve sustainable revenue and earnings growth through providing superior solutions to our customers .
-our strategy to achieve this has been and will continue to be built on the following pillars : 2022 expand client relationships 2014 the overall market we serve continues to gravitate beyond single-product purchases to multi-solution partnerships .
-as the market dynamics shift , we expect our clients to rely more on our multidimensional service offerings .
-our leveraged solutions and processing expertise can drive meaningful value and cost savings to our clients through more efficient operating processes , improved service quality and speed for our clients' customers .
-2022 buy , build or partner to add solutions to cross-sell 2014 we continue to invest in growth through internal product development , as well as through product-focused or market-centric acquisitions that complement and extend our existing capabilities and provide us with additional solutions to cross-sell .
-we also partner from time to time with other entities to provide comprehensive offerings to our customers .
-by investing in solution innovation and integration , we continue to expand our value proposition to clients .
-2022 support our clients through market transformation 2014 the changing market dynamics are transforming the way our clients operate , which is driving incremental demand for our leveraged solutions , consulting expertise , and services around intellectual property .
-our depth of services capabilities enables us to become involved earlier in the planning and design process to assist our clients as they manage through these changes .
-2022 continually improve to drive margin expansion 2014 we strive to optimize our performance through investments in infrastructure enhancements and other measures that are designed to drive organic revenue growth and margin expansion .
-2022 build global diversification 2014 we continue to deploy resources in emerging global markets where we expect to achieve meaningful scale .
-revenues by segment the table below summarizes the revenues by our reporting segments ( in millions ) : .
+stockholder return performance graph the following graph compares the cumulative 5-year total stockholder return on our common stock relative to the cumulative total return of the nasdaq composite index and the s&p 400 information technology index .
+the graph assumes that the value of the investment in our common stock on january 2 , 2010 and in each index on december 31 , 2009 ( including reinvestment of dividends ) was $ 100 and tracks it each year thereafter on the last day of cadence 2019s fiscal year through january 3 , 2015 and , for each index , on the last day of the calendar comparison of 5 year cumulative total return* among cadence design systems , inc. , the nasdaq composite index , and s&p 400 information technology cadence design systems , inc .
+nasdaq composite s&p 400 information technology 12/28/13 1/3/151/1/11 12/31/11 12/29/121/2/10 *$ 100 invested on 1/2/10 in stock or 12/31/09 in index , including reinvestment of dividends .
+indexes calculated on month-end basis .
+copyright a9 2014 s&p , a division of the mcgraw-hill companies inc .
+all rights reserved. .
 
-                            | 2012     | 2011         | 2010          
---------------------------- | -------- | ------------ | --------------
-fsg                         | $ 2246.4 | $ 2076.8     | $ 1890.8      
-psg                         | 2380.6   | 2372.1       | 2354.2        
-isg                         | 1180.5   | 1177.6       | 917.0         
-corporate & other           | 0.1      | -0.9 ( 0.9 ) | -16.4 ( 16.4 )
-total consolidated revenues | $ 5807.6 | $ 5625.6     | $ 5145.6      
+                               | 1/2/2010 | 1/1/2011 | 12/31/2011 | 12/29/2012 | 12/28/2013 | 1/3/2015
+------------------------------ | -------- | -------- | ---------- | ---------- | ---------- | --------
+cadence design systems inc .   | 100.00   | 137.90   | 173.62     | 224.37     | 232.55     | 314.36  
+nasdaq composite               | 100.00   | 117.61   | 118.70     | 139.00     | 196.83     | 223.74  
+s&p 400 information technology | 100.00   | 128.72   | 115.22     | 135.29     | 173.25     | 187.84  
 
-financial solutions group the focus of fsg is to provide the most comprehensive software and services for the core processing , customer channel , treasury services , cash management , wealth management and capital market operations of our financial institution customers in north america .
-we service the core and related ancillary processing needs of north american banks , credit unions , automotive financial companies , commercial lenders , and independent community and savings institutions .
-fis offers a broad selection of in-house and outsourced solutions to banking customers that span the range of asset sizes .
-fsg customers are typically committed under multi-year contracts that provide a stable , recurring revenue base and opportunities for cross-selling additional financial and payments offerings .
-we employ several business models to provide our solutions to our customers .
-we typically deliver the highest value to our customers when we combine our software applications and deliver them in one of several types of outsourcing arrangements , such as an application service provider , facilities management processing or an application management arrangement .
-we are also able to deliver individual applications through a software licensing arrangement .
-based upon our expertise gained through the foregoing arrangements , some clients also retain us to manage their it operations without using any of our proprietary software .
-our solutions in this segment include: 
+the stock price performance included in this graph is not necessarily indicative of future stock price performance. 
